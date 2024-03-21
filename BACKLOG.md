@@ -13,18 +13,18 @@ As a user, I want to see a chessboard with a king and a rook placed on it when I
     A label should be displayed stating whether the king is in check based on the positions of the pieces.
     The UI should be simple and minimalistic, with clear visibility of the chess pieces and the status label.
 
-## Gherkin Scenario
+## Gherkin Scenario:
 
 ### Scenario: Displaying the initial chessboard with fixed piece positions
 
-Given the user starts the game from the console,
-When the game UI loads,
-Then the user sees a chessboard displayed on the screen
-And the king is placed at E1
-And the rook is placed at A5
-And a label is shown indicating if the king is in check or not.
+    Given the user starts the game from the console,
+    When the game UI loads,
+    Then the user sees a chessboard displayed on the screen
+    And the king is placed at E1
+    And the rook is placed at A5
+    And a label is shown indicating if the king is in check or not.
 
-## UI Sketch
+## UI Sketch:
         +----+----+----+----+----+----+----+----+
     8   |    |    |    |    |    |    |    |    |
         +----+----+----+----+----+----+----+----+
