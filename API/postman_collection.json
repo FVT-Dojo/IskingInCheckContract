@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "294cffd9-efab-491f-9a78-354512fad4ba",
+		"name": "Is the King in Check API",
+		"description": "API for the game 'Is the King in Check', providing chessboard status with a king and another piece.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31782829"
+	},
+	"item": [
+		{
+			"name": "game",
+			"item": [
+				{
+					"name": "Start a new game and get the chessboard status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response must match schema\", function () {",
+									"    const schema = {",
+									"        type: \"object\",",
+									"        required: [\"chessboard\", \"isKingInCheck\"],",
+									"        properties: {",
+									"            chessboard: {",
+									"                type: \"array\",",
+									"                items: {",
+									"                    type: \"array\",",
+									"                    items: {",
+									"                        type: \"string\"",
+									"                    }",
+									"                }",
+									"            },",
+									"            isKingInCheck: {",
+									"                type: \"boolean\"",
+									"            }",
+									"        }",
+									"    };",
+									"",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"The rook is on A5\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.chessboard[3][0]).to.eql(\"R\");",
+									"});",
+									"",
+									"pm.test(\"The king is on E1\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.chessboard[7][4]).to.eql(\"K\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/game",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"game"
+							]
+						},
+						"description": "Retrieves the current status of the chessboard with a king and another piece, and indicates if the king is in check."
+					},
+					"response": [
+						{
+							"name": "Successful response with the chessboard status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/game",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"game"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"chessboard\": [\n    [\n      \"<string>\",\n      \"<string>\"\n    ],\n    [\n      \"<string>\",\n      \"<string>\"\n    ]\n  ],\n  \"isKingInCheck\": \"<boolean>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://virtserver.swaggerhub.com/mcoen93ns/IsKingInCheck/1.0.0"
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "inkingincheckcontract",
+  "version": "1.0.0",
+  "description": "Is the king going to die next turn???",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run API/postman_collection.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^6.1.2"
+  }
+}
