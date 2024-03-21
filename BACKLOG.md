@@ -42,6 +42,6 @@ As a user, I want to see a chessboard with a king and a rook placed on it when I
         +----+----+----+----+----+----+----+----+
     1   |    |    |    |    | K  |    |    |    |
         +----+----+----+----+----+----+----+----+
-        A    B    C    D    E    F    G    H
+          A    B    C    D    E    F    G    H
 
     Status: King is not in check.
