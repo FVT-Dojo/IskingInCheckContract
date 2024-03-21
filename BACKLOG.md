@@ -1,17 +1,23 @@
 # User Story
 
+As a API consumer, I want to be able to request and get data about the King and Rook position on a chessboard, so I can show the position of the King and Rook on a chessboard.
+
 ## Title: Viewing the Chessboard in "Is the King in Check"
 
 ## Description:
 As a user, I want to see a chessboard with a king and a rook placed on it when I start the game through the console, so that I can instantly determine whether the king is in check.
 
-## Acceptance Criteria:
+## Acceptance Criteria FE:
 
     Upon starting the game from the console, a chessboard should be displayed on the UI.
     The chessboard should contain only two pieces: a king and a rook.
     The positions of the king and the rook are fixed and known (e.g., king at E1, rook at A5).
     A label should be displayed stating whether the king is in check based on the positions of the pieces.
     The UI should be simple and minimalistic, with clear visibility of the chess pieces and the status label.
+
+## Acceptance Criteria BE:
+
+    The backend should ... if a king is in check or not
 
 ## Gherkin Scenario:
 
@@ -23,6 +29,8 @@ As a user, I want to see a chessboard with a king and a rook placed on it when I
     And the king is placed at E1
     And the rook is placed at A5
     And a label is shown indicating if the king is in check or not.
+
+
 
 ## UI Sketch:
         +----+----+----+----+----+----+----+----+
