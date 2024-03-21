@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Is the King in Check API",
+    "description": "API for the game 'Is the King in Check', providing chessboard status with a king and another piece.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/mcoen93ns/IsKingInCheck/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "paths": {
+    "/game": {
+      "get": {
+        "summary": "Start a new game and get the chessboard status",
+        "description": "Retrieves the current status of the chessboard with a king and another piece, and indicates if the king is in check.",
+        "responses": {
+          "200": {
+            "description": "Successful response with the chessboard status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChessboardStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChessboardStatus": {
+        "required": [
+          "chessboard",
+          "isKingInCheck"
+        ],
+        "type": "object",
+        "properties": {
+          "chessboard": {
+            "type": "array",
+            "example": [
+              [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "R",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "",
+                "",
+                "",
+                "",
+                "K",
+                "",
+                "",
+                ""
+              ]
+            ],
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "isKingInCheck": {
+            "type": "boolean",
+            "example": false
+          }
+        }
+      }
+    }
+  }
+}

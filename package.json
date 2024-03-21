@@ -4,7 +4,8 @@
   "description": "Is the king going to die next turn???",
   "main": "index.js",
   "scripts": {
-    "test": "newman run API/postman_collection.json"
+    "test": "newman run API/postman_collection.json",
+    "mock": "docker run -v $PWD/API/open-api-spec.json:/app/schema.json -p 5000:5000 jormaechea/open-api-mocker"
   },
   "author": "",
   "license": "ISC",

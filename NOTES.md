@@ -4,8 +4,5 @@
 - ✅ Add the API contract 
    - ✅ Postman test
 
-- 🤲 Write backend story
-
-## User story notes
-
-Write User Stories from the perspective of the user. Please avoid technical terms
+- ✅ Write backend story
+- ✅ SPIKE: mocking functionality into this project so that we do not need swaggerhub anymore
